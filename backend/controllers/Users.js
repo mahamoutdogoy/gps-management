@@ -1,6 +1,5 @@
 import User from "../models/UserModel.js";
 import argon2 from "argon2";
-import path from "path";
 export const getUsers = async(req, res) =>{
     try {
         const response = await User.findAll({
@@ -140,27 +139,27 @@ export const getUserCount = async (req, res) => {
 
 
 
-const storage = multer.diskStorage({
-    destination: (req , file, cb) =>{
-        cb(null, 'Images')
-    },
-    filename: (req  , file , cb) => {
+// const storage = multer.diskStorage({
+//     destination: (req , file, cb) =>{
+//         cb(null, 'Images')
+//     },
+//     filename: (req  , file , cb) => {
 
-        cb(null, Date.now() + path.extname(file.originalname))
+//         cb(null, Date.now() + path.extname(file.originalname))
 
-    }
-})
+//     }
+// })
 
-export const upload = multer({
-    storage :storage,
-    limits: {fieldSize: '1000000'},
-    fileFilter: (req , file , cb) =>{
-        const fileTypes = /jpeg|jpg|png|gif/
-        const mimeType = fileTypes.test(file.mimetype)
-        const extname = fileTypes.test(path.extname(file.originalname))
-        if(mimeType && extname ){
-            return cb(null, true)
-        }
-        cb("give proper file format")
-    }
-}).single('image')
+// export const upload = multer({
+//     storage :storage,
+//     limits: {fieldSize: '1000000'},
+//     fileFilter: (req , file , cb) =>{
+//         const fileTypes = /jpeg|jpg|png|gif/
+//         const mimeType = fileTypes.test(file.mimetype)
+//         const extname = fileTypes.test(path.extname(file.originalname))
+//         if(mimeType && extname ){
+//             return cb(null, true)
+//         }
+//         cb("give proper file format")
+//     }
+// }).single('image')
