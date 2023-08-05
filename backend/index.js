@@ -4,6 +4,7 @@ import session from "express-session";
 import dotenv from "dotenv";
 import db from "./config/Database.js";
 import SequelizeStore from "connect-session-sequelize";
+import Users from "./models/UserModel.js";
 //import UserRoute from "./routes/UserRoute.js";
 
 
@@ -23,7 +24,7 @@ const store = new sessionStore({
 //         await db.sync();
 //     })();
 
-//    await Amandes.sync({ alter: true });
+//    await Users.sync({ alter: true });
 
 app.use(session({
     secret: process.env.SESS_SECRET,

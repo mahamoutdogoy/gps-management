@@ -56,20 +56,7 @@ const Users = db.define('users',{
             notEmpty: true
         }
     },
-    agentid:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    },
-    policeStationId:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    },
+
     status:{
         type: DataTypes.BOOLEAN,
         allowNull: false,
