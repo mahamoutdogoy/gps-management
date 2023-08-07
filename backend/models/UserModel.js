@@ -35,13 +35,6 @@ const Users = db.define('users',{
             notEmpty: true
         }
     },
-    phone:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    },
     role:{
         type: DataTypes.STRING,
         allowNull: false,
@@ -49,14 +42,6 @@ const Users = db.define('users',{
             notEmpty: true
         }
     },
-    image:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    },
-
     status:{
         type: DataTypes.BOOLEAN,
         allowNull: false,
