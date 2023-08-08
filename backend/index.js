@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import db from "./config/Database.js";
 import SequelizeStore from "connect-session-sequelize";
 import Users from "./models/UserModel.js";
-//import UserRoute from "./routes/UserRoute.js";
+import UserRoute from "./routes/UserRoute.js";
 
 
 
@@ -41,7 +41,7 @@ app.use(cors({
     origin: 'http://localhost:3000'
 }));
 app.use(express.json());
-
+app.use(UserRoute);
 
 
 
