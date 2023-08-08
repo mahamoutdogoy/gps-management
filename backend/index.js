@@ -46,9 +46,7 @@ app.use(UserRoute);
 
 
 
-//static Images Folder
 
-app.use('/Images', express.static('./Images'))
 
 //  store.sync();
 
